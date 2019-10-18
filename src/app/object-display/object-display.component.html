@@ -1,0 +1,11 @@
+<ul class="a">
+    <ng-container *ngFor="let key of getKeys(object)">
+      <li *ngIf="!isObject(object[key])"><span class="has-text-success">{{key}}</span>: {{object[key]}}</li>
+      <li *ngIf="isObject(object[key])">
+        <p><span class="has-text-success">{{key}}</span>:</p>
+          <app-object-display [object]="object[key]"></app-object-display>
+      </li>
+      
+    </ng-container>
+</ul>
+
